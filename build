@@ -1,0 +1,10 @@
+#!/bin/dash
+
+PRE="$(cat PRE.html)"
+POST="$(cat POST.html)"
+for FILE in "$(ls MD)"
+do
+  echo "$PRE$(smu/smu MD/$FILE)$POST" > HTML/$FILE.html
+done
+
+PAGE=""
